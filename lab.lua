@@ -10,6 +10,22 @@ function generate_random_string(length)
     return result
 end
 
+function make_palindrome(str)
+    local reversed = string.reverse(str)  
+    return str .. reversed                
+end
+
+function is_palindrome(str)
+    return str == string.reverse(str)
+end
+
 math.randomseed(os.time())
-local random_str = generate_random_string(30)
+
+local random_str = generate_random_string(5)
 print("Random string:", random_str)
+
+local palindrome = make_palindrome(random_str)
+print("Generated palindrome:", palindrome)
+
+print("Is palindrome?", is_palindrome(palindrome))
+print("Is original string palindrome?", is_palindrome(random_str))
