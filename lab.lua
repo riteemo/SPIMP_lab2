@@ -12,8 +12,15 @@ end
 
 
 function make_palindrome(str)
-    local reversed = string.reverse(str)  
-    return str .. reversed                
+    local reversed = string.reverse(str)
+    
+    local choice = math.random(2) 
+
+    if choice == 1 then
+        return str .. reversed
+    else
+        return str .. reversed:sub(2)
+    end
 end
 
 
